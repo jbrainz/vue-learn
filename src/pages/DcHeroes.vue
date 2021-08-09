@@ -13,6 +13,7 @@
     </ul>
     <form class="mt-10" @submit.prevent="addNewHero">
       <input
+        ref="newHeroRef"
         class="border rounded"
         v-model="newHero"
         placeholder="Type hero name here"
@@ -30,6 +31,9 @@
 <script>
 export default {
   name: 'DcHeroes',
+  mounted() {
+    this.$refs.newHeroRef.focus()
+  },
   data() {
     return {
       newHero: 'd',
